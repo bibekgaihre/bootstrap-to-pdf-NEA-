@@ -1,0 +1,25 @@
+body {
+  font-family: "Times New Roman", Times, serif !important;
+}
+
+.headtext {
+  padding-top: 2%;
+
+  font-size: x-large;
+}
+
+.box {
+  /* font-family: "Visby CF Bold"; */
+  margin: 0 auto;
+  top: 10%;
+  border-color: #416497;
+  width: 90%;
+  border-style: solid;
+  border-width: 2px;
+  padding: 14px;
+  position: relative;
+}
+
+.label {
+  color: #416497;
+}

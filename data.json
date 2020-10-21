@@ -1,0 +1,23 @@
+{
+  "counter": "Butwal",
+  "rept_id": "0444545",
+  "sc_no": "223232",
+  "date": "2020-05-25 10:45 AM",
+  "customer_id": "455454",
+  "paidby": "6565656565",
+  "channel": "GPRS",
+  "name": "Mr. John Cena",
+  "status": "COMPLETE",
+  "data": [
+    {
+      "duebillof": "Karthik/2077",
+      "reb_pen": "R",
+      "date": "22-OCT-20",
+      "rate": "2.0",
+      "billamount": "630.0",
+      "payableamount": "618.0"
+    }
+  ],
+  "paid": "2336.0",
+  "paidtime": "Advance"
+}
