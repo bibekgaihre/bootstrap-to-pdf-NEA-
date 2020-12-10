@@ -5,7 +5,10 @@ const fs = require("fs");
 const exphbs = require("express-handlebars");
 
 const toPdf = require("html-gen-pdf");
-const createTemplate = require("./createTemplate");
+// const createTemplate = require("./createTemplate");
+const createTemplate = require("./Template/createTemplate");
+const { create } = require("express-handlebars");
+const { request } = require("http");
 
 const app = express();
 
@@ -31,6 +34,52 @@ app.get("/", async (req, res, next) => {
   );
 
   res.sendStatus(200);
+});
+
+app.get("/waterbill", async (req, res, next) => {
+  let data = await createTemplate.createWaterBillTempate();
+
+  await toPdf(
+    "./water_bill_template.html",
+    `./${data.customerCode}_${data.date}.pdf`,
+    {
+      format: "A3",
+      landscape: false,
+    }
+  );
+  res.sendStatus(200);
+});
+
+app.get("/worldlink", async (req, res, next) => {
+  let data = await createTemplate.createWorldlinkBillTemplate();
+  await toPdf(
+    "./worldlink_bill_template.html",
+    `./${data.userId}_${data.date}.pdf`,
+    {
+      format: "A3",
+      landscape: false,
+    }
+  );
+  res.sendStatus(200);
+});
+
+app.get("/subisu", async (req, res, next) => {
+  let data = await createTemplate.createSubisuBillTemplate();
+  await toPdf(
+    "./subisu_bill_template.html",
+    `./${data.username}_${data.date}.pdf`,
+    {
+      format: "A3",
+      landscape: false,
+    }
+  );
+  res.sendStatus(200);
+});
+
+app.get("/home", function (req, res, next) {
+  res.render("home", {
+    title: "hello",
+  });
 });
 
 // catch 404 and forward to error handler
