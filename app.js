@@ -76,6 +76,58 @@ app.get("/subisu", async (req, res, next) => {
   res.sendStatus(200);
 });
 
+app.get("/dishhome", async (req, res, next) => {
+  let data = await createTemplate.createDishHomeTemplate();
+  await toPdf(
+    "./dishhome_bill_template.html",
+    `./${data.customerName}_${data.date}.pdf`,
+    {
+      format: "A3",
+      landscape: false,
+    }
+  );
+  res.sendStatus(200);
+});
+
+app.get("/bussewa", async (req, res, next) => {
+  let data = await createTemplate.createBusSewaTemplate();
+  await toPdf(
+    "./bussewa_bill_template.html",
+    `./${data.name}_${data.date}.pdf`,
+    {
+      format: "A3",
+      landscape: false,
+    }
+  );
+  res.sendStatus(200);
+});
+
+app.get("/easytaxi", async (req, res, next) => {
+  let data = await createTemplate.createEasyTaxiTemplate();
+  await toPdf(
+    "./easytaxi_bill_template.html",
+    `./${data.name}_${data.date}.pdf`,
+    {
+      format: "A3",
+      landscape: false,
+    }
+  );
+  res.sendStatus(200);
+});
+
+app.get("/edx", async (req, res, next) => {
+  let data = await createTemplate.createEdxTemplate();
+  await toPdf(
+    "./edx_bill_template.html",
+    `./${data.username}_${data.date}.pdf`,
+    {
+      format: "A3",
+      landscape: false,
+    }
+  );
+  res.sendStatus(200);
+});
+
 app.get("/home", function (req, res, next) {
   res.render("home", {
     title: "hello",

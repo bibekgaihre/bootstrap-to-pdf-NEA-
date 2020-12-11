@@ -1,0 +1,12 @@
+{
+    "referenceCode":"087K543",
+    "date":"2020-10-01 10:22 AM",
+    "amount":"16272.00",
+    "channel":"GPRS",
+    "status":"COMPLETE",
+    "name":"John Doe",
+    "pickupLocation":"Airport",
+    "dropoffLocation":"Thamel",
+    "pickupTime":"2020-10-01 08:22 PM",
+    "paidBy":"9806748383"
+}

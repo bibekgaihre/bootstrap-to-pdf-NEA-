@@ -1,0 +1,17 @@
+{
+    "referenceCode":"087K543",
+    "date":"2020-10-01 10:22 AM",
+    "amount":"16272.00",
+    "channel":"GPRS",
+    "status":"COMPLETE",
+    "name":"John Doe",
+    "source":"Kathmandu",
+    "destination":"Pokhara",
+    "travels":"GreyHound",
+    "busType":"Air Suspension",
+    "busNumber":"3452",
+    "fare":"800",
+    "seat":["A1,A2"],
+    "departure":"2021-01-01 07:00 PM",
+    "paidBy":"90989088"
+}

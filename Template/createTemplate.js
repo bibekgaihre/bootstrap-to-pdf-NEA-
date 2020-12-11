@@ -2,6 +2,10 @@ const Handlebars = require("handlebars");
 let waterdata = require("../data/waterbill.json");
 let worldlinkdata = require("../data/internet.json");
 let subisuData = require("../data/subisu.json");
+let dishhomeData = require("../data/dishhome.json");
+let bussewaData = require("../data/bussewa.json");
+let easytaxiData = require("../data/easytaxi.json");
+let edxData = require("../data/edx.json");
 
 const fs = require("fs");
 
@@ -651,8 +655,860 @@ const createSubisuBillTemplate = async () => {
   return subisuData;
 };
 
+const createDishHomeTemplate = async () => {
+  let text = `<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>DishHome bill</title>
+      <!-- <link rel="stylesheet" href="./main.css" /> -->
+      <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+      />
+    </head>
+    <style>
+      body {
+        font-family: "Times New Roman", Times, serif !important;
+      }
+  
+      .headtext {
+        padding-top: 2%;
+  
+        font-size: x-large;
+      }
+  
+      .box {
+        /* font-family: "Visby CF Bold"; */
+        margin: 0 auto;
+        top: 10%;
+        border-color: #416497;
+        width: 100%;
+        border-style: solid;
+        border-width: 2px;
+        padding: 14px;
+        position: relative;
+      }
+  
+      .label {
+        color: #416497;
+      }
+    </style>
+    <body>
+      <div class="container-fluid lay">
+        <main id="content" class="bd-masthead" role="main">
+          <div class="container" style="margin-bottom: 27%">
+            <div class="row">
+              <div class="col-md-12 order-md-1 pr-md-5 text-center"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 order-md-1 pr-md-5">
+                <div class="box">
+                  <div class="row">
+                    <div class="col-md-3 order-md-1 pr-md-5">
+                      <img
+                        src="https://admin.dishhome.com.np/uploads/images/1566799990.png"
+                        width="110px"
+                        height="60px"
+                      />
+                    </div>
+                    <div
+                      class="col-md-6 order-md-1 pr-md-5"
+                      style="padding-top: 8px"
+                    >
+                      <span class="label" style="text-align: center">
+                        <h4>
+                          <strong>Dish Home Topup</strong>
+                        </h4>
+                      </span>
+                      <br />
+                      <span style="text-align: center">
+                        <h6>
+                          <span class="label"></span
+                          ><span class="counter">PAYMENT RECEIPT</span>
+                        </h6>
+                      </span>
+                    </div>
+                    <div
+                      class="col-md-3 order-md-1 pr-md-5 label"
+                      style="padding-top: 32px; font-size: x-small"
+                    >
+                      <span> </span>
+                    </div>
+                  </div>
+                  <br />
+                  <div class="row" style="overflow-x: auto">
+                    <div class="col-md-12 order-md-1 pr-md-5">
+                      <table
+                        style="width: 100%; text-align: left; font-size: x-small"
+                      >
+                        <tr>
+                          <td class="label">Reference Code</td>
+                          <td>:&nbsp;{{referenceCode}}</td>
+                          <td class="label">Date</td>
+                          <td>:&nbsp;{{date}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Amount</td>
+                          <td>:&nbsp{{amount}}</td>
+                          <td class="label">Channel</td>
+                          <td>:&nbsp;{{channel}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">CAS/Chip/Account ID</td>
+                          <td>:&nbsp;{{accountId}}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+  
+                  <hr style="border-top: 1px dotted #909599" />
+                  <div class="row" style="overflow-x: auto">
+                    <div class="col-md-12 order-md-1 pr-md-5">
+                      <table
+                        style="width: 50%; text-align: left; font-size: x-small"
+                      >
+                        <tr>
+                          <td class="label">Status</td>
+                          <td>:&nbsp;{{status}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Expiry Date</td>
+                          <td>:&nbsp;{{expiryDate}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Dishhome Type</td>
+                          <td>:&nbsp;{{dishhomeType}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Request Unique Id</td>
+                          <td>:&nbsp;{{requestUniqueId}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Package Name</td>
+                          <td>:&nbsp;{{packageName}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Customer Name</td>
+                          <td>:&nbsp;{{customerName}}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+  
+                  <hr style="border-top: 1px dotted #909599" />
+                  <div class="row" style="overflow-x: auto">
+                    <div class="col-md-12 order-md-1 pr-md-5">
+                      <table
+                        style="width: 50%; text-align: left; font-size: x-small"
+                      >
+                        <tr>
+                          <td class="label">Paid By</td>
+                          <td>:&nbsp;{{paidBy}}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <hr style="border-top: 1px dotted #909599" />
+  
+                  <br />
+                  <div class="row">
+                    <div
+                      class="col-md-4 order-md-1 pr-md-5"
+                      style="text-align: right; font-size: x-small"
+                    ></div>
+                    <div class="col-md-5 order-md-1 pr-md-5 text-center">
+                      <img
+                        src="./8a3681af-0bc8-4b23-9dbc-ce455892eee9.jpeg"
+                        width="42px"
+                        height="42px"
+                      />
+                    </div>
+                    <div class="col-md-3 order-md-1 pr-md-5">
+                      <div class="row">
+                        <div class="col-12 text-center">
+                          <hr
+                            style="border-top: 1px dotted; margin-bottom: 0.5rem"
+                          />
+                          <span style="font-size: x-small">Signature</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <br />
+            <br />
+            <div class="row">
+              <div class="col-md-12 order-md-1 pr-md-5 text-center">
+                <span>
+                  Customer Support: 844684664, 9896562332, 656613131315</span
+                >
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </body>
+  </html>
+  `;
+  var template = Handlebars.compile(text);
+  var result = template(dishhomeData);
+
+  fs.writeFile("dishhome_bill_template.html", result, function (err) {
+    if (err) {
+      return console.log(err);
+    }
+  });
+  return dishhomeData;
+};
+
+const createBusSewaTemplate = async () => {
+  let text = `<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Bussewa bill</title>
+      <!-- <link rel="stylesheet" href="./main.css" /> -->
+      <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+      />
+    </head>
+    <style>
+      body {
+        font-family: "Times New Roman", Times, serif !important;
+      }
+  
+      .headtext {
+        padding-top: 2%;
+  
+        font-size: x-large;
+      }
+  
+      .box {
+        /* font-family: "Visby CF Bold"; */
+        margin: 0 auto;
+        top: 10%;
+        border-color: #416497;
+        width: 100%;
+        border-style: solid;
+        border-width: 2px;
+        padding: 14px;
+        position: relative;
+      }
+  
+      .label {
+        color: #416497;
+      }
+    </style>
+    <body>
+      <div class="container-fluid lay">
+        <main id="content" class="bd-masthead" role="main">
+          <div class="container" style="margin-bottom: 27%">
+            <div class="row">
+              <div class="col-md-12 order-md-1 pr-md-5 text-center"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 order-md-1 pr-md-5">
+                <div class="box">
+                  <div class="row">
+                    <div class="col-md-3 order-md-1 pr-md-5">
+                      <img
+                        src="https://www.bussewa.com/faces/designCollection/new-design/images/bussewa.png"
+                        width="50px"
+                        height="50px"
+                      />
+                    </div>
+                    <div
+                      class="col-md-6 order-md-1 pr-md-5"
+                      style="padding-top: 8px"
+                    >
+                      <span class="label" style="text-align: center">
+                        <h4>
+                          <strong>BusSewa Payment</strong>
+                        </h4>
+                      </span>
+                      <br />
+                      <span style="text-align: center">
+                        <h6>
+                          <span class="label"></span
+                          ><span class="counter">PAYMENT RECEIPT</span>
+                        </h6>
+                      </span>
+                    </div>
+                    <div
+                      class="col-md-3 order-md-1 pr-md-5 label"
+                      style="padding-top: 32px; font-size: x-small"
+                    >
+                      <span> </span>
+                    </div>
+                  </div>
+                  <br />
+                  <div class="row" style="overflow-x: auto">
+                    <div class="col-md-12 order-md-1 pr-md-5">
+                      <table
+                        style="width: 100%; text-align: left; font-size: x-small"
+                      >
+                        <tr>
+                          <td class="label">Reference Code</td>
+                          <td>:&nbsp;{{referenceCode}}</td>
+                          <td class="label">Date</td>
+                          <td>:&nbsp;{{date}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Amount</td>
+                          <td>:&nbsp{{amount}}</td>
+                          <td class="label">Channel</td>
+                          <td>:&nbsp;{{channel}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Status</td>
+                          <td>:&nbsp;{{status}}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+  
+                  <hr style="border-top: 1px dotted #909599" />
+                  <div class="row" style="overflow-x: auto">
+                    <div class="col-md-12 order-md-1 pr-md-5">
+                      <table
+                        style="width: 50%; text-align: left; font-size: x-small"
+                      >
+                        <tr>
+                          <td class="label">Name</td>
+                          <td>:&nbsp;{{name}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Source</td>
+                          <td>:&nbsp;{{source}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Destination</td>
+                          <td>:&nbsp;{{destination}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Travels</td>
+                          <td>:&nbsp;{{travels}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Bus Type</td>
+                          <td>:&nbsp;{{busType}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Bus Number</td>
+                          <td>:&nbsp;{{busNumber}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Fare</td>
+                          <td>:&nbsp;{{fare}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Seat</td>
+                          <td>:&nbsp;{{seat}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Departure</td>
+                          <td>:&nbsp;{{departure}}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+  
+                  <hr style="border-top: 1px dotted #909599" />
+                  <div class="row" style="overflow-x: auto">
+                    <div class="col-md-12 order-md-1 pr-md-5">
+                      <table
+                        style="width: 50%; text-align: left; font-size: x-small"
+                      >
+                        <tr>
+                          <td class="label">Paid By</td>
+                          <td>:&nbsp;{{paidBy}}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <hr style="border-top: 1px dotted #909599" />
+  
+                  <br />
+                  <div class="row">
+                    <div
+                      class="col-md-4 order-md-1 pr-md-5"
+                      style="text-align: right; font-size: x-small"
+                    ></div>
+                    <div class="col-md-5 order-md-1 pr-md-5 text-center">
+                      <img
+                        src="./8a3681af-0bc8-4b23-9dbc-ce455892eee9.jpeg"
+                        width="42px"
+                        height="42px"
+                      />
+                    </div>
+                    <div class="col-md-3 order-md-1 pr-md-5">
+                      <div class="row">
+                        <div class="col-12 text-center">
+                          <hr
+                            style="border-top: 1px dotted; margin-bottom: 0.5rem"
+                          />
+                          <span style="font-size: x-small">Signature</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <br />
+            <br />
+            <div class="row">
+              <div class="col-md-12 order-md-1 pr-md-5 text-center">
+                <span>
+                  Customer Support: 844684664, 9896562332, 656613131315</span
+                >
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </body>
+  </html>
+  `;
+  var template = Handlebars.compile(text);
+  var result = template(bussewaData);
+
+  fs.writeFile("bussewa_bill_template.html", result, function (err) {
+    if (err) {
+      return console.log(err);
+    }
+  });
+  return bussewaData;
+};
+
+const createEasyTaxiTemplate = async () => {
+  let text = `<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>EasyTaxi bill</title>
+      <!-- <link rel="stylesheet" href="./main.css" /> -->
+      <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+      />
+    </head>
+    <style>
+      body {
+        font-family: "Times New Roman", Times, serif !important;
+      }
+  
+      .headtext {
+        padding-top: 2%;
+  
+        font-size: x-large;
+      }
+  
+      .box {
+        /* font-family: "Visby CF Bold"; */
+        margin: 0 auto;
+        top: 10%;
+        border-color: #416497;
+        width: 100%;
+        border-style: solid;
+        border-width: 2px;
+        padding: 14px;
+        position: relative;
+      }
+  
+      .label {
+        color: #416497;
+      }
+    </style>
+    <body>
+      <div class="container-fluid lay">
+        <main id="content" class="bd-masthead" role="main">
+          <div class="container" style="margin-bottom: 27%">
+            <div class="row">
+              <div class="col-md-12 order-md-1 pr-md-5 text-center"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 order-md-1 pr-md-5">
+                <div class="box">
+                  <div class="row">
+                    <div class="col-md-3 order-md-1 pr-md-5">
+                      <img
+                        src="http://www.easytaxinepal.com/images/lloggoo.png"
+                        width="50px"
+                        height="50px"
+                      />
+                    </div>
+                    <div
+                      class="col-md-6 order-md-1 pr-md-5"
+                      style="padding-top: 8px"
+                    >
+                      <span class="label" style="text-align: center">
+                        <h4>
+                          <strong>EasyTaxi Payment</strong>
+                        </h4>
+                      </span>
+                      <br />
+                      <span style="text-align: center">
+                        <h6>
+                          <span class="label"></span
+                          ><span class="counter">PAYMENT RECEIPT</span>
+                        </h6>
+                      </span>
+                    </div>
+                    <div
+                      class="col-md-3 order-md-1 pr-md-5 label"
+                      style="padding-top: 32px; font-size: x-small"
+                    >
+                      <span> </span>
+                    </div>
+                  </div>
+                  <br />
+                  <div class="row" style="overflow-x: auto">
+                    <div class="col-md-12 order-md-1 pr-md-5">
+                      <table
+                        style="width: 100%; text-align: left; font-size: x-small"
+                      >
+                        <tr>
+                          <td class="label">Reference Code</td>
+                          <td>:&nbsp;{{referenceCode}}</td>
+                          <td class="label">Date</td>
+                          <td>:&nbsp;{{date}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Amount</td>
+                          <td>:&nbsp{{amount}}</td>
+                          <td class="label">Channel</td>
+                          <td>:&nbsp;{{channel}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Status</td>
+                          <td>:&nbsp;{{status}}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+  
+                  <hr style="border-top: 1px dotted #909599" />
+                  <div class="row" style="overflow-x: auto">
+                    <div class="col-md-12 order-md-1 pr-md-5">
+                      <table
+                        style="width: 50%; text-align: left; font-size: x-small"
+                      >
+                        <tr>
+                          <td class="label">Name</td>
+                          <td>:&nbsp;{{name}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Pick-up Time</td>
+                          <td>:&nbsp;{{pickupTime}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Pick-up Location</td>
+                          <td>:&nbsp;{{pickupLocation}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Drop-Off Location</td>
+                          <td>:&nbsp;{{dropoffLocation}}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+  
+                  <hr style="border-top: 1px dotted #909599" />
+                  <div class="row" style="overflow-x: auto">
+                    <div class="col-md-12 order-md-1 pr-md-5">
+                      <table
+                        style="width: 50%; text-align: left; font-size: x-small"
+                      >
+                        <tr>
+                          <td class="label">Paid By</td>
+                          <td>:&nbsp;{{paidBy}}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <hr style="border-top: 1px dotted #909599" />
+  
+                  <br />
+                  <div class="row">
+                    <div
+                      class="col-md-4 order-md-1 pr-md-5"
+                      style="text-align: right; font-size: x-small"
+                    ></div>
+                    <div class="col-md-5 order-md-1 pr-md-5 text-center">
+                      <img
+                        src="./8a3681af-0bc8-4b23-9dbc-ce455892eee9.jpeg"
+                        width="42px"
+                        height="42px"
+                      />
+                    </div>
+                    <div class="col-md-3 order-md-1 pr-md-5">
+                      <div class="row">
+                        <div class="col-12 text-center">
+                          <hr
+                            style="border-top: 1px dotted; margin-bottom: 0.5rem"
+                          />
+                          <span style="font-size: x-small">Signature</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <br />
+            <br />
+            <div class="row">
+              <div class="col-md-12 order-md-1 pr-md-5 text-center">
+                <span>
+                  Customer Support: 844684664, 9896562332, 656613131315</span
+                >
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </body>
+  </html>
+  `;
+  var template = Handlebars.compile(text);
+  var result = template(easytaxiData);
+
+  fs.writeFile("easytaxi_bill_template.html", result, function (err) {
+    if (err) {
+      return console.log(err);
+    }
+  });
+  return easytaxiData;
+};
+
+const createEdxTemplate = async () => {
+  let text = `<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Edx bill</title>
+      <!-- <link rel="stylesheet" href="./main.css" /> -->
+      <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+      />
+    </head>
+    <style>
+      body {
+        font-family: "Times New Roman", Times, serif !important;
+      }
+  
+      .headtext {
+        padding-top: 2%;
+  
+        font-size: x-large;
+      }
+  
+      .box {
+        /* font-family: "Visby CF Bold"; */
+        margin: 0 auto;
+        top: 10%;
+        border-color: #416497;
+        width: 100%;
+        border-style: solid;
+        border-width: 2px;
+        padding: 14px;
+        position: relative;
+      }
+  
+      .label {
+        color: #416497;
+      }
+    </style>
+    <body>
+      <div class="container-fluid lay">
+        <main id="content" class="bd-masthead" role="main">
+          <div class="container" style="margin-bottom: 27%">
+            <div class="row">
+              <div class="col-md-12 order-md-1 pr-md-5 text-center"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 order-md-1 pr-md-5">
+                <div class="box">
+                  <div class="row">
+                    <div class="col-md-3 order-md-1 pr-md-5">
+                      <img
+                        src="https://www.edx.org/images/edx-logo-header.png"
+                        width="80px"
+                        height="40px"
+                      />
+                    </div>
+                    <div
+                      class="col-md-6 order-md-1 pr-md-5"
+                      style="padding-top: 8px"
+                    >
+                      <span class="label" style="text-align: center">
+                        <h4>
+                          <strong>EDX Payment</strong>
+                        </h4>
+                      </span>
+                      <br />
+                      <span style="text-align: center">
+                        <h6>
+                          <span class="label"></span
+                          ><span class="counter">PAYMENT RECEIPT</span>
+                        </h6>
+                      </span>
+                    </div>
+                    <div
+                      class="col-md-3 order-md-1 pr-md-5 label"
+                      style="padding-top: 32px; font-size: x-small"
+                    >
+                      <span> </span>
+                    </div>
+                  </div>
+                  <br />
+                  <div class="row" style="overflow-x: auto">
+                    <div class="col-md-12 order-md-1 pr-md-5">
+                      <table
+                        style="width: 100%; text-align: left; font-size: x-small"
+                      >
+                        <tr>
+                          <td class="label">Reference Code</td>
+                          <td>:&nbsp;{{referenceCode}}</td>
+                          <td class="label">Date</td>
+                          <td>:&nbsp;{{date}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Amount</td>
+                          <td>:&nbsp;{{amount}}</td>
+                          <td class="label">Channel</td>
+                          <td>:&nbsp;{{channel}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Status</td>
+                          <td>:&nbsp;{{status}}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+  
+                  <hr style="border-top: 1px dotted #909599" />
+                  <div class="row" style="overflow-x: auto">
+                    <div class="col-md-12 order-md-1 pr-md-5">
+                      <table
+                        style="width: 50%; text-align: left; font-size: x-small"
+                      >
+                        <tr>
+                          <td class="label">Username</td>
+                          <td>:&nbsp;{{username}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Course Id</td>
+                          <td>:&nbsp;{{courseId}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Course Name</td>
+                          <td>:&nbsp;{{courseName}}</td>
+                        </tr>
+                        <tr>
+                          <td class="label">Course Category</td>
+                          <td>:&nbsp;{{courseCategory}}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+  
+                  <hr style="border-top: 1px dotted #909599" />
+                  <div class="row" style="overflow-x: auto">
+                    <div class="col-md-12 order-md-1 pr-md-5">
+                      <table
+                        style="width: 50%; text-align: left; font-size: x-small"
+                      >
+                        <tr>
+                          <td class="label">Paid By</td>
+                          <td>:&nbsp;{{paidBy}}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <hr style="border-top: 1px dotted #909599" />
+  
+                  <br />
+                  <div class="row">
+                    <div
+                      class="col-md-4 order-md-1 pr-md-5"
+                      style="text-align: right; font-size: x-small"
+                    ></div>
+                    <div class="col-md-5 order-md-1 pr-md-5 text-center">
+                      <img
+                        src="./8a3681af-0bc8-4b23-9dbc-ce455892eee9.jpeg"
+                        width="42px"
+                        height="42px"
+                      />
+                    </div>
+                    <div class="col-md-3 order-md-1 pr-md-5">
+                      <div class="row">
+                        <div class="col-12 text-center">
+                          <hr
+                            style="border-top: 1px dotted; margin-bottom: 0.5rem"
+                          />
+                          <span style="font-size: x-small">Signature</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <br />
+            <br />
+            <div class="row">
+              <div class="col-md-12 order-md-1 pr-md-5 text-center">
+                <span>
+                  Customer Support: 844684664, 9896562332, 656613131315</span
+                >
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </body>
+  </html>
+  `;
+  var template = Handlebars.compile(text);
+  var result = template(edxData);
+
+  fs.writeFile("edx_bill_template.html", result, function (err) {
+    if (err) {
+      return console.log(err);
+    }
+  });
+  return edxData;
+};
+
 module.exports = {
   createWaterBillTempate,
   createWorldlinkBillTemplate,
   createSubisuBillTemplate,
+  createDishHomeTemplate,
+  createBusSewaTemplate,
+  createEasyTaxiTemplate,
+  createEdxTemplate,
 };
