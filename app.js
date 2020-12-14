@@ -128,6 +128,19 @@ app.get("/edx", async (req, res, next) => {
   res.sendStatus(200);
 });
 
+app.get("/statement", async (req, res, next) => {
+  let data = await createTemplate.createKuraakaniTemplate();
+  await toPdf(
+    "./kuraakani_statement_template.html",
+    `./${data.username}_${data.from}.pdf`,
+    {
+      format: "A4",
+      landscape: false,
+    }
+  );
+  res.sendStatus(200);
+});
+
 app.get("/home", function (req, res, next) {
   res.render("home", {
     title: "hello",

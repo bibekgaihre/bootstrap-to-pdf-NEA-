@@ -1,0 +1,232 @@
+{
+    "name":"John Doe",
+    "username":"johndoe",
+    "from":"2020-11-15",
+    "to":"2020-12-14",
+    "openingBalance":"45",
+    "closingBalance":"50",
+    "generatedAt":"14-12-2020 12:47:33",
+    "statement":[
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        },
+        {"_id":"5fcf6b06e3051970a0ed259a",
+            "transactionsDate": 1607428870947,
+            "servicesName": "Ncell",
+            "serviceIdentity": {
+                "phoneNumber": "9813059225"
+            },
+            "paymentDetails": "Example of Payment Details",
+            "amountType": "-",
+            "amount": "10",
+            "balance":"400"
+        }
+    ]
+}
+

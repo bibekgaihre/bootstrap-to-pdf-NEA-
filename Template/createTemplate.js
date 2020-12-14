@@ -5,6 +5,7 @@ let subisuData = require("../data/subisu.json");
 let dishhomeData = require("../data/dishhome.json");
 let bussewaData = require("../data/bussewa.json");
 let easytaxiData = require("../data/easytaxi.json");
+let kuraakaniData = require("../data/kuraakani.json");
 let edxData = require("../data/edx.json");
 
 const fs = require("fs");
@@ -1503,6 +1504,158 @@ const createEdxTemplate = async () => {
   return edxData;
 };
 
+const createKuraakaniTemplate = async () => {
+  let text = `<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Kuraakani Statement</title>
+      <!-- <link rel="stylesheet" href="./main.css" /> -->
+      <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+      />
+    </head>
+    <style>
+      body {
+        font-family: "Times New Roman", Times, serif !important;
+      }
+  
+      .headtext {
+        padding-top: 2%;
+  
+        font-size: x-large;
+      }
+  
+      .box {
+        /* font-family: "Visby CF Bold"; */
+        margin: 0 auto;
+        top: 10%;
+        border-color: #416497;
+        width: 100%;
+        border-style: solid;
+        border-width: 2px;
+        padding: 14px;
+        position: relative;
+      }
+    </style>
+    <body>
+      <div class="container-fluid lay">
+        <main id="content" class="bd-masthead" role="main">
+          <div class="container-fluid" style="margin-bottom: 27%">
+            <div class="row">
+              <div class="col-md-12 order-md-1 pr-md-5 text-center"></div>
+            </div>
+            <hr style="border-top: 8px solid #ff900a" />
+            <div class="row">
+              <div class="col-md-12 order-md-1 pr-md-5">
+                <div class="row">
+                  <div class="col-md-3 order-md-1 pr-md-5">
+                    <img
+                      src="https://www.nimbuzzkuraakani.com/img/nimbuzz.png"
+                      width="90px"
+                      height="50px"
+                    />
+                  </div>
+                </div>
+  
+                <hr style="border-top: 4px solid #ff900a" />
+                <div class="row">
+                  <div class="col-md-12 order-md-1 pr-md-5">
+                    <div class="row">
+                      <div class="col-md-4 order-md-1 pr-md-5">
+                        <h6>Electronic Statement</h6>
+                      </div>
+                      <div class="col-md-8 order-md-1 pr-md-5">
+                        <h6>From: {{from}} To: {{to}}</h6>
+                      </div>
+                    </div>
+  
+                    <table style="width: 100%; font-size: small">
+                      <tr>
+                        <td>Name</td>
+                        <td>:&nbsp;{{name}}</td>
+                        <td style="text-align: right">Opening Balance</td>
+                        <td style="text-align: right">
+                          :&nbsp;{{openingBalance}}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Username</td>
+                        <td>:&nbsp;{{username}}</td>
+                        <td style="text-align: right">Closing Balance</td>
+                        <td style="text-align: right">
+                          :&nbsp;{{closingBalance}}
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <br />
+                <div class="row" style="overflow-x: auto">
+                  <div class="col-md-12 order-md-1 pr-md-5">
+                    <table
+                      style="
+                        border: 1px solid black;
+                        width: 100%;
+                        text-align: center;
+                        font-size: small;
+                      "
+                    >
+                      <tr style="background-color: #ff900a; color: white">
+                        <th>Transaction Date</th>
+                        <th>Description</th>
+                        <!-- serviceName+serviceIdentity -->
+                        <th>Detail</th>
+                        <th>Amount</th>
+                        <th>Amount Type</th>
+                        <th>Balance</th>
+                      </tr>
+                      {{#statement}}
+                      <tr>
+                        <td>{{transactionsDate}}</td>
+                        <td>{{servicesName}}-{{serviceIdentity.phoneNumber}}</td>
+                        <td>{{paymentDetails}}</td>
+                        <td>{{amount}}</td>
+                        <td>{{amountType}}</td>
+                        <td>{{balance}}</td>
+                      </tr>
+                      {{/statement}}
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <br />
+            <br />
+            <div class="row">
+              <div class="col-md-12 order-md-1 pr-md-5 text-center">
+                <span> Report Generated On: {{generatedAt}}</span>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </body>
+  </html>
+  
+  
+  `;
+  var template = Handlebars.compile(text);
+  var result = template(kuraakaniData);
+
+  fs.writeFile("kuraakani_statement_template.html", result, function (err) {
+    if (err) {
+      return console.log(err);
+    }
+  });
+  return kuraakaniData;
+};
+
 module.exports = {
   createWaterBillTempate,
   createWorldlinkBillTemplate,
@@ -1511,4 +1664,5 @@ module.exports = {
   createBusSewaTemplate,
   createEasyTaxiTemplate,
   createEdxTemplate,
+  createKuraakaniTemplate,
 };
