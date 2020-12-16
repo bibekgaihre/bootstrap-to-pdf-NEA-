@@ -26,6 +26,11 @@ const createWaterBillTempate = async () => {
         />
       </head>
       <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
         body {
           font-family: "Times New Roman", Times, serif !important;
         }
@@ -40,7 +45,7 @@ const createWaterBillTempate = async () => {
           /* font-family: "Visby CF Bold"; */
           margin: 0 auto;
           top: 10%;
-          border-color: #416497;
+          border-color: #ff900a;
           width: 100%;
           border-style: solid;
           border-width: 2px;
@@ -55,7 +60,7 @@ const createWaterBillTempate = async () => {
       <body>
         <div class="container-fluid lay">
           <main id="content" class="bd-masthead" role="main">
-            <div class="container" style="margin-bottom: 27%">
+            <div class="container" style="margin-bottom: 27%;width: 490px; height: 645px">
               <div class="row">
                 <div class="col-md-12 order-md-1 pr-md-5 text-center"></div>
               </div>
@@ -74,12 +79,12 @@ const createWaterBillTempate = async () => {
                         class="col-md-6 order-md-1 pr-md-5"
                         style="padding-top: 8px"
                       >
-                        <span class="label" style="text-align: center">
-                          <h4>
+                        <span class="label" style="text-align: center;color: #ff900a">
+                          <h3>
                             <strong>नेपाल खानेपानी संस्थान</strong>
-                          </h4>
+                          </h3>
                         </span>
-                        <br />
+                   
                         <span style="text-align: center">
                           <h6>
                             <span class="label"></span
@@ -89,7 +94,7 @@ const createWaterBillTempate = async () => {
                       </div>
                       <div
                         class="col-md-3 order-md-1 pr-md-5 label"
-                        style="padding-top: 32px; font-size: x-small"
+                        style="padding-top: 32px; font-size: small; color:black"
                       >
                         <span> Payment Receipt</span>
                       </div>
@@ -165,8 +170,8 @@ const createWaterBillTempate = async () => {
                     <div class="row">
                       <div
                         class="col-md-4 order-md-1 pr-md-5"
-                        style="text-align: right; font-size: x-small"
-                      >नेपाल खानेपानी संस्थानको आधिकारिक महशुल संकलक
+                        style="text-align: left; font-size: x-small"
+                      >
                       </div>
                       <div class="col-md-5 order-md-1 pr-md-5 text-center">
                         <img
@@ -177,12 +182,12 @@ const createWaterBillTempate = async () => {
                       </div>
                       <div class="col-md-3 order-md-1 pr-md-5">
                       <div class="row">
-                        <div class="col-12 text-center">
-                          <hr
-                            style="border-top: 1px dotted; margin-bottom: 0.5rem"
-                          />
-                          <span style="font-size: x-small">Signature</span>
-                        </div>
+                      <div class="col-3 text-center">
+                      <hr
+                        style="border-top: 1px dotted; margin-bottom: 0.5rem"
+                      />
+                      <span style="font-size: x-small">Signature</span>
+                    </div>
                       </div>
                     </div>
                     </div>
@@ -191,6 +196,7 @@ const createWaterBillTempate = async () => {
               </div>
     
               <br />
+              <br/>
               <br />
               <div class="row">
                 <div class="col-md-12 order-md-1 pr-md-5 text-center">
@@ -233,6 +239,11 @@ const createWorldlinkBillTemplate = async () => {
       />
     </head>
     <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
       body {
         font-family: "Times New Roman", Times, serif !important;
       }
@@ -247,7 +258,7 @@ const createWorldlinkBillTemplate = async () => {
         /* font-family: "Visby CF Bold"; */
         margin: 0 auto;
         top: 10%;
-        border-color: #416497;
+        border-color: #ff900a;
         width: 100%;
         border-style: solid;
         border-width: 2px;
@@ -262,7 +273,7 @@ const createWorldlinkBillTemplate = async () => {
     <body>
       <div class="container-fluid lay">
         <main id="content" class="bd-masthead" role="main">
-          <div class="container" style="margin-bottom: 27%">
+          <div class="container" style="margin-bottom: 27%;width: 490px; height: 645px">
             <div class="row">
               <div class="col-md-12 order-md-1 pr-md-5 text-center"></div>
             </div>
@@ -281,10 +292,10 @@ const createWorldlinkBillTemplate = async () => {
                       class="col-md-6 order-md-1 pr-md-5"
                       style="padding-top: 8px"
                     >
-                      <span class="label" style="text-align: center">
-                        <h4>
+                      <span class="label" style="text-align: center;color:#ff900a">
+                        <h3>
                           <strong>Worldlink Payment</strong>
-                        </h4>
+                        </h3>
                       </span>
                       <br />
                       <span style="text-align: center">
@@ -301,7 +312,7 @@ const createWorldlinkBillTemplate = async () => {
                       <span> </span>
                     </div>
                   </div>
-                  <br />
+             
                   <div class="row" style="overflow-x: auto">
                     <div class="col-md-12 order-md-1 pr-md-5">
                       <table
@@ -331,7 +342,7 @@ const createWorldlinkBillTemplate = async () => {
                   <div class="row" style="overflow-x: auto">
                     <div class="col-md-12 order-md-1 pr-md-5">
                       <table
-                        style="width: 50%; text-align: left; font-size: x-small"
+                        style="width: 100%; text-align: left; font-size: x-small"
                       >
                         <tr>
                           <td class="label">Accept Advance Payment</td>
@@ -394,7 +405,7 @@ const createWorldlinkBillTemplate = async () => {
                       class="col-md-4 order-md-1 pr-md-5"
                       style="text-align: right; font-size: x-small"
                     >
-                      Official tariff collector of Worldlink Communications
+                      
                     </div>
                     <div class="col-md-5 order-md-1 pr-md-5 text-center">
                       <img
@@ -405,12 +416,12 @@ const createWorldlinkBillTemplate = async () => {
                     </div>
                     <div class="col-md-3 order-md-1 pr-md-5">
                       <div class="row">
-                        <div class="col-12 text-center">
-                          <hr
-                            style="border-top: 1px dotted; margin-bottom: 0.5rem"
-                          />
-                          <span style="font-size: x-small">Signature</span>
-                        </div>
+                      <div class="col-3 text-center">
+                      <hr
+                        style="border-top: 1px dotted; margin-bottom: 0.5rem"
+                      />
+                      <span style="font-size: x-small">Signature</span>
+                    </div>
                       </div>
                     </div>
                   </div>
@@ -419,6 +430,7 @@ const createWorldlinkBillTemplate = async () => {
             </div>
   
             <br />
+            <br/>
             <br />
             <div class="row">
               <div class="col-md-12 order-md-1 pr-md-5 text-center">
@@ -461,6 +473,12 @@ const createSubisuBillTemplate = async () => {
       />
     </head>
     <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
       body {
         font-family: "Times New Roman", Times, serif !important;
       }
@@ -475,7 +493,7 @@ const createSubisuBillTemplate = async () => {
         /* font-family: "Visby CF Bold"; */
         margin: 0 auto;
         top: 10%;
-        border-color: #416497;
+        border-color: #ff900a;
         width: 100%;
         border-style: solid;
         border-width: 2px;
@@ -488,9 +506,9 @@ const createSubisuBillTemplate = async () => {
       }
     </style>
     <body>
-      <div class="container-fluid lay">
+      <div class="container-fluid lay" >
         <main id="content" class="bd-masthead" role="main">
-          <div class="container" style="margin-bottom: 27%">
+          <div class="container" style="margin-bottom: 27%;width: 490px; height: 645px">
             <div class="row">
               <div class="col-md-12 order-md-1 pr-md-5 text-center"></div>
             </div>
@@ -509,12 +527,12 @@ const createSubisuBillTemplate = async () => {
                       class="col-md-6 order-md-1 pr-md-5"
                       style="padding-top: 8px"
                     >
-                      <span class="label" style="text-align: center">
-                        <h4>
+                      <span class="label" style="text-align: center;color: #ff900a">
+                        <h3>
                           <strong>Subisu Cablenet</strong>
-                        </h4>
+                        </h3>
                       </span>
-                      <br />
+                      
                       <span style="text-align: center">
                         <h6>
                           <span class="label"></span
@@ -529,7 +547,7 @@ const createSubisuBillTemplate = async () => {
                       <span> </span>
                     </div>
                   </div>
-                  <br />
+          
                   <div class="row" style="overflow-x: auto">
                     <div class="col-md-12 order-md-1 pr-md-5">
                       <table
@@ -589,7 +607,7 @@ const createSubisuBillTemplate = async () => {
                   <div class="row" style="overflow-x: auto">
                     <div class="col-md-12 order-md-1 pr-md-5">
                       <table
-                        style="width: 90%; text-align: left; font-size: x-small"
+                        style="width: 97%; text-align: left; font-size: x-small"
                       >
                         <tr>
                           <td class="label">Paid By</td>
@@ -603,21 +621,22 @@ const createSubisuBillTemplate = async () => {
                   <br />
                   <div class="row">
                     <div
-                      class="col-md-4 order-md-1 pr-md-5"
+                      class="col-md-4 col-sm-4 col-xs-4 order-md-1 "
                       style="text-align: right; font-size: x-small"
                     >
-                      Official tariff collector of Subisu Cablenet
+                     
                     </div>
-                    <div class="col-md-5 order-md-1 pr-md-5 text-center">
+                    <div class="col-md-5 col-sm-5 col-xs-5 order-md-1 text-center">
                       <img
                         src="./8a3681af-0bc8-4b23-9dbc-ce455892eee9.jpeg"
                         width="42px"
                         height="42px"
                       />
                     </div>
-                    <div class="col-md-3 order-md-1 pr-md-5">
+                    <div class="col-md-3 col-sm-3 col-xs-3 order-md-1 ">
                       <div class="row">
-                        <div class="col-12 text-center">
+                      
+                        <div class="col-3 text-center">
                           <hr
                             style="border-top: 1px dotted; margin-bottom: 0.5rem"
                           />
@@ -629,7 +648,7 @@ const createSubisuBillTemplate = async () => {
                 </div>
               </div>
             </div>
-  
+            <br/>
             <br />
             <br />
             <div class="row">
@@ -672,6 +691,11 @@ const createDishHomeTemplate = async () => {
       />
     </head>
     <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
       body {
         font-family: "Times New Roman", Times, serif !important;
       }
@@ -686,7 +710,7 @@ const createDishHomeTemplate = async () => {
         /* font-family: "Visby CF Bold"; */
         margin: 0 auto;
         top: 10%;
-        border-color: #416497;
+        border-color: #ff900a;
         width: 100%;
         border-style: solid;
         border-width: 2px;
@@ -701,7 +725,7 @@ const createDishHomeTemplate = async () => {
     <body>
       <div class="container-fluid lay">
         <main id="content" class="bd-masthead" role="main">
-          <div class="container" style="margin-bottom: 27%">
+          <div class="container" style="margin-bottom: 27%;width: 490px; height: 645px">
             <div class="row">
               <div class="col-md-12 order-md-1 pr-md-5 text-center"></div>
             </div>
@@ -720,12 +744,12 @@ const createDishHomeTemplate = async () => {
                       class="col-md-6 order-md-1 pr-md-5"
                       style="padding-top: 8px"
                     >
-                      <span class="label" style="text-align: center">
-                        <h4>
+                      <span class="label" style="text-align: center;color: #ff900a">
+                        <h3>
                           <strong>Dish Home Topup</strong>
-                        </h4>
+                        </h3>
                       </span>
-                      <br />
+                
                       <span style="text-align: center">
                         <h6>
                           <span class="label"></span
@@ -740,7 +764,7 @@ const createDishHomeTemplate = async () => {
                       <span> </span>
                     </div>
                   </div>
-                  <br />
+             
                   <div class="row" style="overflow-x: auto">
                     <div class="col-md-12 order-md-1 pr-md-5">
                       <table
@@ -770,7 +794,7 @@ const createDishHomeTemplate = async () => {
                   <div class="row" style="overflow-x: auto">
                     <div class="col-md-12 order-md-1 pr-md-5">
                       <table
-                        style="width: 50%; text-align: left; font-size: x-small"
+                        style="width: 100%; text-align: left; font-size: x-small"
                       >
                         <tr>
                           <td class="label">Status</td>
@@ -804,7 +828,7 @@ const createDishHomeTemplate = async () => {
                   <div class="row" style="overflow-x: auto">
                     <div class="col-md-12 order-md-1 pr-md-5">
                       <table
-                        style="width: 50%; text-align: left; font-size: x-small"
+                        style="width: 100%; text-align: left; font-size: x-small"
                       >
                         <tr>
                           <td class="label">Paid By</td>
@@ -830,12 +854,12 @@ const createDishHomeTemplate = async () => {
                     </div>
                     <div class="col-md-3 order-md-1 pr-md-5">
                       <div class="row">
-                        <div class="col-12 text-center">
-                          <hr
-                            style="border-top: 1px dotted; margin-bottom: 0.5rem"
-                          />
-                          <span style="font-size: x-small">Signature</span>
-                        </div>
+                      <div class="col-3 text-center">
+                      <hr
+                        style="border-top: 1px dotted; margin-bottom: 0.5rem"
+                      />
+                      <span style="font-size: x-small">Signature</span>
+                    </div>
                       </div>
                     </div>
                   </div>
@@ -843,6 +867,7 @@ const createDishHomeTemplate = async () => {
               </div>
             </div>
   
+            <br />
             <br />
             <br />
             <div class="row">
@@ -885,6 +910,11 @@ const createBusSewaTemplate = async () => {
       />
     </head>
     <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
       body {
         font-family: "Times New Roman", Times, serif !important;
       }
@@ -899,7 +929,7 @@ const createBusSewaTemplate = async () => {
         /* font-family: "Visby CF Bold"; */
         margin: 0 auto;
         top: 10%;
-        border-color: #416497;
+        border-color: #ff900a;
         width: 100%;
         border-style: solid;
         border-width: 2px;
@@ -914,7 +944,7 @@ const createBusSewaTemplate = async () => {
     <body>
       <div class="container-fluid lay">
         <main id="content" class="bd-masthead" role="main">
-          <div class="container" style="margin-bottom: 27%">
+          <div class="container" style="margin-bottom: 27%;width: 490px; height: 645px">
             <div class="row">
               <div class="col-md-12 order-md-1 pr-md-5 text-center"></div>
             </div>
@@ -933,12 +963,12 @@ const createBusSewaTemplate = async () => {
                       class="col-md-6 order-md-1 pr-md-5"
                       style="padding-top: 8px"
                     >
-                      <span class="label" style="text-align: center">
-                        <h4>
+                      <span class="label" style="text-align: center;color: #ff900a">
+                        <h3>
                           <strong>BusSewa Payment</strong>
-                        </h4>
+                        </h3>
                       </span>
-                      <br />
+          
                       <span style="text-align: center">
                         <h6>
                           <span class="label"></span
@@ -953,7 +983,7 @@ const createBusSewaTemplate = async () => {
                       <span> </span>
                     </div>
                   </div>
-                  <br />
+              
                   <div class="row" style="overflow-x: auto">
                     <div class="col-md-12 order-md-1 pr-md-5">
                       <table
@@ -983,7 +1013,7 @@ const createBusSewaTemplate = async () => {
                   <div class="row" style="overflow-x: auto">
                     <div class="col-md-12 order-md-1 pr-md-5">
                       <table
-                        style="width: 50%; text-align: left; font-size: x-small"
+                        style="width: 100%; text-align: left; font-size: x-small"
                       >
                         <tr>
                           <td class="label">Name</td>
@@ -1055,19 +1085,19 @@ const createBusSewaTemplate = async () => {
                     </div>
                     <div class="col-md-3 order-md-1 pr-md-5">
                       <div class="row">
-                        <div class="col-12 text-center">
-                          <hr
-                            style="border-top: 1px dotted; margin-bottom: 0.5rem"
-                          />
-                          <span style="font-size: x-small">Signature</span>
-                        </div>
+                      <div class="col-3 text-center">
+                      <hr
+                        style="border-top: 1px dotted; margin-bottom: 0.5rem"
+                      />
+                      <span style="font-size: x-small">Signature</span>
+                    </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-  
+            <br />
             <br />
             <br />
             <div class="row">
@@ -1110,6 +1140,12 @@ const createEasyTaxiTemplate = async () => {
       />
     </head>
     <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
       body {
         font-family: "Times New Roman", Times, serif !important;
       }
@@ -1124,7 +1160,7 @@ const createEasyTaxiTemplate = async () => {
         /* font-family: "Visby CF Bold"; */
         margin: 0 auto;
         top: 10%;
-        border-color: #416497;
+        border-color: #ff900a;
         width: 100%;
         border-style: solid;
         border-width: 2px;
@@ -1139,7 +1175,7 @@ const createEasyTaxiTemplate = async () => {
     <body>
       <div class="container-fluid lay">
         <main id="content" class="bd-masthead" role="main">
-          <div class="container" style="margin-bottom: 27%">
+          <div class="container" style="margin-bottom: 27%;width: 490px; height: 645px">
             <div class="row">
               <div class="col-md-12 order-md-1 pr-md-5 text-center"></div>
             </div>
@@ -1158,12 +1194,12 @@ const createEasyTaxiTemplate = async () => {
                       class="col-md-6 order-md-1 pr-md-5"
                       style="padding-top: 8px"
                     >
-                      <span class="label" style="text-align: center">
-                        <h4>
+                      <span class="label" style="text-align: center;color: #ff900a">
+                        <h3>
                           <strong>EasyTaxi Payment</strong>
-                        </h4>
+                        </h3>
                       </span>
-                      <br />
+            
                       <span style="text-align: center">
                         <h6>
                           <span class="label"></span
@@ -1178,7 +1214,7 @@ const createEasyTaxiTemplate = async () => {
                       <span> </span>
                     </div>
                   </div>
-                  <br />
+           
                   <div class="row" style="overflow-x: auto">
                     <div class="col-md-12 order-md-1 pr-md-5">
                       <table
@@ -1260,19 +1296,19 @@ const createEasyTaxiTemplate = async () => {
                     </div>
                     <div class="col-md-3 order-md-1 pr-md-5">
                       <div class="row">
-                        <div class="col-12 text-center">
-                          <hr
-                            style="border-top: 1px dotted; margin-bottom: 0.5rem"
-                          />
-                          <span style="font-size: x-small">Signature</span>
-                        </div>
+                      <div class="col-3 text-center">
+                      <hr
+                        style="border-top: 1px dotted; margin-bottom: 0.5rem"
+                      />
+                      <span style="font-size: x-small">Signature</span>
+                    </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-  
+            <br />
             <br />
             <br />
             <div class="row">
@@ -1315,6 +1351,11 @@ const createEdxTemplate = async () => {
       />
     </head>
     <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
       body {
         font-family: "Times New Roman", Times, serif !important;
       }
@@ -1329,7 +1370,7 @@ const createEdxTemplate = async () => {
         /* font-family: "Visby CF Bold"; */
         margin: 0 auto;
         top: 10%;
-        border-color: #416497;
+        border-color: #ff900a;
         width: 100%;
         border-style: solid;
         border-width: 2px;
@@ -1344,7 +1385,7 @@ const createEdxTemplate = async () => {
     <body>
       <div class="container-fluid lay">
         <main id="content" class="bd-masthead" role="main">
-          <div class="container" style="margin-bottom: 27%">
+          <div class="container" style="margin-bottom: 27%;width: 490px; height: 645px">
             <div class="row">
               <div class="col-md-12 order-md-1 pr-md-5 text-center"></div>
             </div>
@@ -1363,12 +1404,12 @@ const createEdxTemplate = async () => {
                       class="col-md-6 order-md-1 pr-md-5"
                       style="padding-top: 8px"
                     >
-                      <span class="label" style="text-align: center">
-                        <h4>
+                      <span class="label" style="text-align: center;color: #ff900a">
+                        <h3>
                           <strong>EDX Payment</strong>
-                        </h4>
+                        </h3>
                       </span>
-                      <br />
+ 
                       <span style="text-align: center">
                         <h6>
                           <span class="label"></span
@@ -1383,7 +1424,7 @@ const createEdxTemplate = async () => {
                       <span> </span>
                     </div>
                   </div>
-                  <br />
+             
                   <div class="row" style="overflow-x: auto">
                     <div class="col-md-12 order-md-1 pr-md-5">
                       <table
@@ -1439,7 +1480,7 @@ const createEdxTemplate = async () => {
                   <div class="row" style="overflow-x: auto">
                     <div class="col-md-12 order-md-1 pr-md-5">
                       <table
-                        style="width: 50%; text-align: left; font-size: x-small"
+                        style="width: 69%; text-align: left; font-size: x-small"
                       >
                         <tr>
                           <td class="label">Paid By</td>
@@ -1465,7 +1506,7 @@ const createEdxTemplate = async () => {
                     </div>
                     <div class="col-md-3 order-md-1 pr-md-5">
                       <div class="row">
-                        <div class="col-12 text-center">
+                      <div class="col-3 text-center">
                           <hr
                             style="border-top: 1px dotted; margin-bottom: 0.5rem"
                           />
@@ -1477,7 +1518,7 @@ const createEdxTemplate = async () => {
                 </div>
               </div>
             </div>
-  
+            <br />
             <br />
             <br />
             <div class="row">

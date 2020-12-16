@@ -7,6 +7,7 @@ const exphbs = require("express-handlebars");
 const toPdf = require("html-gen-pdf");
 // const createTemplate = require("./createTemplate");
 const createTemplate = require("./Template/createTemplate");
+const et = require("./createTemplate");
 const { create } = require("express-handlebars");
 const { request } = require("http");
 
@@ -22,13 +23,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", async (req, res, next) => {
-  let data = await createTemplate.createTemplate();
+  let data = await et.createTemplate();
 
   await toPdf(
     "./electricity_bill_template.html",
     `./${data.sc_no}_${data.date}.pdf`,
     {
-      format: "A3",
+      format: "A5",
       landscape: false,
     }
   );
@@ -43,7 +44,7 @@ app.get("/waterbill", async (req, res, next) => {
     "./water_bill_template.html",
     `./${data.customerCode}_${data.date}.pdf`,
     {
-      format: "A3",
+      format: "A5",
       landscape: false,
     }
   );
@@ -56,7 +57,7 @@ app.get("/worldlink", async (req, res, next) => {
     "./worldlink_bill_template.html",
     `./${data.userId}_${data.date}.pdf`,
     {
-      format: "A3",
+      format: "A5",
       landscape: false,
     }
   );
@@ -69,7 +70,7 @@ app.get("/subisu", async (req, res, next) => {
     "./subisu_bill_template.html",
     `./${data.username}_${data.date}.pdf`,
     {
-      format: "A3",
+      format: "A5",
       landscape: false,
     }
   );
@@ -82,7 +83,7 @@ app.get("/dishhome", async (req, res, next) => {
     "./dishhome_bill_template.html",
     `./${data.customerName}_${data.date}.pdf`,
     {
-      format: "A3",
+      format: "A5",
       landscape: false,
     }
   );
@@ -95,7 +96,7 @@ app.get("/bussewa", async (req, res, next) => {
     "./bussewa_bill_template.html",
     `./${data.name}_${data.date}.pdf`,
     {
-      format: "A3",
+      format: "A5",
       landscape: false,
     }
   );
@@ -108,7 +109,7 @@ app.get("/easytaxi", async (req, res, next) => {
     "./easytaxi_bill_template.html",
     `./${data.name}_${data.date}.pdf`,
     {
-      format: "A3",
+      format: "A5",
       landscape: false,
     }
   );
@@ -121,7 +122,7 @@ app.get("/edx", async (req, res, next) => {
     "./edx_bill_template.html",
     `./${data.username}_${data.date}.pdf`,
     {
-      format: "A3",
+      format: "A5",
       landscape: false,
     }
   );

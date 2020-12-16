@@ -18,6 +18,11 @@ const createTemplate = async () => {
       />
     </head>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
       body {
         font-family: "Times New Roman", Times, serif !important;
       }
@@ -32,7 +37,7 @@ const createTemplate = async () => {
         /* font-family: "Visby CF Bold"; */
         margin: 0 auto;
         top: 10%;
-        border-color: #416497;
+        border-color: #ff900a;
         width: 100%;
         border-style: solid;
         border-width: 2px;
@@ -47,7 +52,10 @@ const createTemplate = async () => {
     <body>
       <div class="container-fluid lay">
         <main id="content" class="bd-masthead" role="main">
-          <div class="container" style="margin-bottom: 27%">
+          <div
+            class="container"
+            style="margin-bottom: 27%; width: 490px; height: 645px"
+          >
             <div class="row">
               <div class="col-md-12 order-md-1 pr-md-5 text-center"></div>
             </div>
@@ -67,11 +75,11 @@ const createTemplate = async () => {
                       style="padding-top: 8px"
                     >
                       <span class="label" style="text-align: center">
-                        <h4>
+                        <h3>
                           <strong>नेपाल बिद्युत प्राधिकरण </strong>
-                        </h4>
+                        </h3>
                       </span>
-                      <br />
+  
                       <span style="text-align: center">
                         <h6>
                           <span class="label">Counter:</span
@@ -81,7 +89,7 @@ const createTemplate = async () => {
                     </div>
                     <div
                       class="col-md-3 order-md-1 pr-md-5 label"
-                      style="padding-top: 32px; font-size: x-small"
+                      style="padding-top: 32px; font-size: small; color: black"
                     >
                       <span> NEA Online Payment </span>
                     </div>
@@ -148,15 +156,27 @@ const createTemplate = async () => {
                     </div>
                   </div>
                   <hr style="border-top: 1px dotted #909599" />
+                  <div class="row" style="overflow-x: auto">
+                    <div class="col-md-12 order-md-1 pr-md-5">
+                      <table
+                        style="width: 50%; text-align: left; font-size: x-small"
+                      >
+                        <tr>
+                          <td class="label">Paid &emsp;&emsp;&nbsp;</td>
+                          <td>:&nbsp;{{paid}} ({{paidtime}})</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+  
+                  <hr style="border-top: 1px dotted #909599" />
                   <br />
                   <div class="row">
                     <div
-                      class="col-md-3 order-md-1 pr-md-5"
+                      class="col-md-4 order-md-1 pr-md-5"
                       style="text-align: right; font-size: x-small"
                     >
-                      <span>
-                        नेपाल बिद्युत प्राधिकरणको आधिकारिक महशुल संकलक
-                      </span>
+                     
                     </div>
                     <div class="col-md-5 order-md-1 pr-md-5 text-center">
                       <img
@@ -165,24 +185,22 @@ const createTemplate = async () => {
                         height="42px"
                       />
                     </div>
-                    <div class="col-md-4 order-md-1 pr-md-5">
+                    <div class="col-md-3 order-md-1 pr-md-5">
                       <div class="row">
-                        <div class="col-6 text-center">
+                        <div class="col-3 text-center">
                           <hr
                             style="border-top: 1px dotted; margin-bottom: 0.5rem"
                           />
                           <span style="font-size: x-small">Signature</span>
                         </div>
-                        <div class="col-6" style="font-size: small">
-                          <span class="label">Paid:</span>{{paid}} ({{paidtime}})
-                        </div>
+                      
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-  
+            <br />
             <br />
             <br />
             <div class="row">
@@ -197,6 +215,7 @@ const createTemplate = async () => {
       </div>
     </body>
   </html>
+  
   `;
   var template = Handlebars.compile(text);
   var result = template(data);
